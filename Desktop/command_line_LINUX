@@ -1,0 +1,24 @@
+ls : list files in actual folder
+cd [absolute ("/home/..") or relative ("ex/..") path]: move in repos
+mkdir [name]: create a directory (repository)
+rm [path]: remove a file/ repo (try "sudo rm" too)
+cp [source] [destination]: copy a file (don't know the option for folders)
+cat [path]: open a file
+man [name] : open the manual of a package
+apt (or sudo apt): manage package
+snap : manage package
+pgrep [name of a process]: display the ID of the process
+ps [option] [user] [option]: list of the running process 
+	ps -aux : list all
+	ps -U [user (root, clement...)] -au : list the user process
+kill [ID] : kill a process
+grep : searching (file, content of files, process...)
+
+passwd : change password of current user
+su : switch user to root
+sudo : switch user to root and do
+
+journalctl : control the journal logs in /var (options --vacuum-size --vacuum-time=10d (exemple, USE TLDR))
+
+Options:
+--help
