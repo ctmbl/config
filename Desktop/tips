@@ -1,0 +1,15 @@
+to move every file in . (except .) in /tmp:
+find ./* -iname '*' -exec mv {} /tmp \;
+
+clean old revisions of snap:
+snap list --all | awk '/disabled/{print $1, $3}' | while read snapname revision; do sudo snap remove "$snapname" --revision="$revision"; done;
+
+clear journalctl:
+journalctl --vacuum-time=30d
+journalctl --vacuum-size=500M
+modify /etc/systemd/journald.conf and append SystemMaxUse=100M
+
+~/.config/Code/User/workspace SEEMS to be cache files
+
+output > filename    write in a file the output (if "cat" only wait for input then, if "echo <something>" pipe the output of echo...)
+output >> filename    same but APPEND
