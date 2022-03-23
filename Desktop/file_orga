@@ -1,0 +1,6 @@
+first try `man hier`
+
+/bin for critical bin like sh
+/usr/bin for packaged bin
+/usr/local/bin for own installed bin
+/opt for bug fat borring app like Oracle (see https://unix.stackexchange.com/questions/8656/usr-bin-vs-usr-local-bin-on-linux)

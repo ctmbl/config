@@ -13,10 +13,19 @@ ps [option] [user] [option]: list of the running process
 	ps -U [user (root, clement...)] -au : list the user process
 kill [ID] : kill a process
 grep : searching (file, content of files, process...)
+chown
+chmod
+uname (-osrv)
+which <program/cmd>
+whereis <program/cmd>
+whoami
+groups
+groupadd
 
 passwd : change password of current user
 su : switch user to root
 sudo : switch user to root and do
+pwd : print the current dir
 
 journalctl : control the journal logs in /var (options --vacuum-size --vacuum-time=10d (exemple, USE TLDR))
 
