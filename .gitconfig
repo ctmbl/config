@@ -1,0 +1,12 @@
+[init]
+	defaultBranch = main
+[alias]
+	tr = log --graph --all --oneline --decorate
+	str = log --graph --all --oneline --decorate --simplify-by-decoration
+	st = status
+	cm = commit -m
+[user]
+	name = ctmbl
+	email = mabileau.clement@gmail.com
+[pull]
+	rebase = false
