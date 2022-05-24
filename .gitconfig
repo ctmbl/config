@@ -3,8 +3,20 @@
 [alias]
 	tr = log --graph --all --oneline --decorate
 	str = log --graph --all --oneline --decorate --simplify-by-decoration
+	mtr = "!f() { git log --graph --all --oneline --decorate --max-count=$1;}; f"
+	mstr = "!f() { git log --graph --all --oneline --decorate --simplify-by-decoration --max-count=$1;}; f"
 	st = status
 	cm = commit -m
+	cma = commit --amend
+	rb = rebase
+	rbc = rebase --continue
+	rbi = rebase -i
+	rba = rebase --abort
+	co = checkout
+	cpick = cherry-pick
+	rt = remote
+	rtv = remote -v
+	addu = add -u
 [user]
 	name = ctmbl
 	email = mabileau.clement@gmail.com
