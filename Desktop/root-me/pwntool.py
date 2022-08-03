@@ -1,36 +1,42 @@
 #!/usr/bin/env python3
 
 from pwn import * 
+import sys
 
-argv = ["pwntools.py","xx"]
-print("SSH on challenge: "+argv[1])
+def pwn_it(guessed_address = 0x0):
+    pass
 
-host = ssh(user="app-systeme-ch"+argv[1],
-           host="challenge02.root-me.org",
-           port=2222,
-           password="app-systeme-ch"+argv[1])
-target = host.process(b"./ch"+bytes(argv[1],'utf-8'))
+if len(sys.argv) != 2:
+    print("remote, local or plz_pwn ?")
+    exit(1)
 
-target.interactive()
+target = None
+if sys.argv[1] == "remote":
+    target = ???? 
 
-buffer = b""
-payload = p32(0xdeadbeef)
-target.sendline(buffer + payload)
+    pwn_it()
+    target.interactive()
+elif sys.argv[1] == "local":
+    target = process( ???? )
+    gdb.attach(target, gdbscript='')
+    pwn_it()
+    target.interactive()
+elif sys.argv[1] == "plz_pwn":
+    print("Doesn't defined")
+    for i in range( ???? , ???? , ??? ): 
+        target = ????
+        pwn_it(i)
+        try: 
+            target.recvline()
+        except EOFError:
+            pass
+        except:
+            target.interactive()
+        else:
+            target.interactive()
+        target.kill()
+else:
+    print("remote, local or plz_pwn ?")
+    exit(1)
 
-target.interactive()
-
-close = False
-while(not close):
-    msg = input()
-    if msg == 'exit\n' or msg == 'e\n':
-        print("--> Order to exit challenge...")
-        close = True
-        host.close()
-        break
-    elif msg != "\n":
-        print("--> Sending: "+msg)
-        target.sendline(bytes(msg,'ascii'))
-        print(target.recvline())
-    else:
-        print(target.recvline())
 
