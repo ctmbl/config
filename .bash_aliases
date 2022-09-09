@@ -1,5 +1,13 @@
 [ -f "/usr/bin/vim" ] && export EDITOR="/usr/bin/vim"
 
+HISTCONTROL=ignoredups:ignorespace
+
+HISTFILE=".bash_history"
+HISTFILESIZE=200000
+HISTSIZE=100000
+
+shopt -s histappend
+
 alias git-config='/usr/bin/git --git-dir=/home/ctmbl/config.git --work-tree=/home/ctmbl'
 alias gconf='git-config'
 
