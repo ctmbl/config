@@ -6,3 +6,11 @@ git-something remote add ...
 git-something add ...
 git-something pull / commit / push ..
 
+[DON'T UNDERSTOOD BUT WORK AS A WORKAROUND]
+When cloning a bare repo fetching won't fetch remotes refs
+add this in the local config:
+[remote "origin"]
+...
+    fetch = +refs/heads/*:refs/remotes/origin/*
+
+(maybe even fo each "remote" if there is with such repo)
