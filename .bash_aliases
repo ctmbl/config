@@ -2,7 +2,7 @@
 
 HISTCONTROL=ignoredups:ignorespace
 
-HISTFILE=".bash_history"
+HISTFILE="${HOME}/.bash_history"
 HISTFILESIZE=200000
 HISTSIZE=100000
 
