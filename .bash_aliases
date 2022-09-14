@@ -12,8 +12,8 @@ alias git-config='/usr/bin/git --git-dir=/home/ctmbl/config.git --work-tree=/hom
 alias gconf='git-config'
 
 # some more ls aliases
-alias ll='ls -AlF'
-alias l='ls -CF'
+alias ll='ls -AlFh'
+alias l='ls -1F'
 
 # Only load liquidprompt in interactive shells, not from a script or from scp
 # `liquidprompt`
