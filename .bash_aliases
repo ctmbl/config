@@ -1,10 +1,10 @@
 [ -f "/usr/bin/vim" ] && export EDITOR="/usr/bin/vim"
 
-HISTCONTROL=ignoredups:ignorespace
+export HISTCONTROL=ignoredups:ignorespace
 
-HISTFILE="${HOME}/.bash_history"
-HISTFILESIZE=200000
-HISTSIZE=100000
+export HISTFILE="${HOME}/.bash_history"
+export HISTFILESIZE=200000
+export HISTSIZE=100000
 
 shopt -s histappend
 
