@@ -17,6 +17,7 @@
 	rt = remote
 	rtv = remote -v
 	addu = add -u
+	addup = add -u -p
 [user]
 	name = ctmbl
 	email = mabileau.clement@gmail.com
