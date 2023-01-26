@@ -1,0 +1,8 @@
+ - to generate a key in expert mode: gpg --expert --full-gen-key
+(tuto: https://www.linuxbabe.com/security/a-practical-guide-to-gpg-part-1-generate-your-keypair used 
+elliptic curve crypto and ed25519 to generate key, and advise not to put any comment)
+ - to export the public key to a file: gpg --armor --export "mabileau.clement@gmail.com" > pubkey.asc
+(--armor option is to use armored ASCII)
+ - to list keys: gpg --list-sigs "mabileau.clement@gmail.com"
+ - to send pubkey to a server (gnu pub keyserver here): gpg --keyserver hkps://keys.openpgp.org --send-key <key_fingerprint>
+ - to search for public keys in gnu public keyserver: gpg --keyserver hkps://keys.openpgp.org --search "mabileau.clement@gmail.com" 
