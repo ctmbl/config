@@ -8,8 +8,8 @@
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
-#import:
-#  - /path/to/alacritty.yml
+import:
+  - ~/.config/alacritty/themes/afterflow.yaml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -178,11 +178,11 @@ font:
 #draw_bold_text_with_bright_colors: false
 
 # Colors (ArcoLinux) (recycled)
-colors:
+#colors:
   # Default colors
-  primary:
-   background: '#222222'
-   foreground: '#F9F9F9'
+  #primary:
+  #  background: '#222222'
+  #  foreground: '#F9F9F9'
 
     # Bright and dim foreground colors
     #
@@ -251,26 +251,26 @@ colors:
   #  background: CellForeground
 
   # Normal colors
-  normal:
-    black:   '#3f3f3f'
-    red:     '#cc0000'
-    green:   '#4e9a06'
-    yellow:  '#c4a000'
-    blue:    '#94bff3'
-    magenta: '#85678f'
-    cyan:    '#06989a'
-    white:   '#dcdccc'
+#  normal
+#    black:   '#3f3f3f'
+#    red:     '#cc0000'
+#    green:   '#4e9a06'
+#    yellow:  '#c4a000'
+#    blue:    '#94bff3'
+#    magenta: '#85678f'
+#    cyan:    '#06989a'
+#    white:   '#dcdccc'
 
   # Bright colors
-  bright:
-    black:   '#545454'
-    red:     '#fc5454'
-    green:   '#8ae234'
-    yellow:  '#fce94f'
-    blue:    '#94bff3'
-    magenta: '#b294bb'
-    cyan:    '#93e0e3'
-    white:   '#ffffff'
+#  bright:
+#    black:   '#545454'
+#    red:     '#fc5454'
+#    green:   '#8ae234'
+#    yellow:  '#fce94f'
+#    blue:    '#94bff3'
+#    magenta: '#b294bb'
+#    cyan:    '#93e0e3'
+#    white:   '#ffffff'
 
   # Dim colors
   #
