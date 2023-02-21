@@ -13,3 +13,5 @@ alias grep='grep --color=auto'
 alias ll='ls -AlFh'
 alias l='ls -1F'
 
+# useful aliases
+alias dua='du -h --summarize * | sort --human-numeric-sort' # TO UPDATE to add slash after directories' name
