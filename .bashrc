@@ -1,4 +1,4 @@
-[ -z "$PS1" ] && return
+[[ $- != *i* ]] && return
 
 [ -f "/usr/bin/vim" ] && export EDITOR="/usr/bin/vim"
 
