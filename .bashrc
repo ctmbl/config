@@ -1,3 +1,5 @@
+[ -z "$PS1" ] && return
+
 [ -f "/usr/bin/vim" ] && export EDITOR="/usr/bin/vim"
 
 export HISTCONTROL=ignoredups:ignorespace
