@@ -10,7 +10,50 @@ export HISTSIZE=100000
 
 shopt -s histappend
 
-[ -f ".bash_aliases" ] && source .bash_aliases 
+# git aliases
+alias git-config='/usr/bin/git --git-dir=/home/ctmbl/config.git --work-tree=/home/ctmbl'
+alias gconf='git-config'
+# Correct typos
+alias gcnof='git-config'
+alias gocnf='git-config'
+
+# Non-secure aliases to add color
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+
+# some more ls aliases
+alias ll='ls -AlFh'
+alias l='ls -1F'
+
+# useful aliases
+alias dua='du -h --summarize * | sort --human-numeric-sort' # TO UPDATE to add slash after directories' name
+
+# ex = EXtractor for all kinds of archives (from ArcoLinux default .bashrc)
+# usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *.deb)       ar x $1      ;;
+      *.tar.xz)    tar xf $1    ;;
+      *.tar.zst)   tar xf $1    ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
 
 ### Terminal setup and module loading
 # Neofetch
