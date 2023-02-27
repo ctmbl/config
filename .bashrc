@@ -57,7 +57,7 @@ ex ()
 
 ### Terminal setup and module loading
 # Neofetch
-[ -f "/usr/bin/neofetch" ] && echo $- | grep -q i 2>/dev/null && /usr/bin/neofetch;
+[ -f "/usr/bin/neofetch" ] && [ -z "$NONEOFETCH" ] && echo $- | grep -q i 2>/dev/null && /usr/bin/neofetch;
 
 # Only load liquidprompt in interactive shells, not from a script or from scp
 # `liquidprompt`
