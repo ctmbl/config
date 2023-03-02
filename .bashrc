@@ -55,6 +55,9 @@ ex ()
   fi
 }
 
+# Start the ssh-agent used to store unlocked ssh key, useful when pushing regularly with git
+eval "$(ssh-agent -s)"
+
 ### Terminal setup and module loading
 # Neofetch
 [ -f "/usr/bin/neofetch" ] && [ -z "$NONEOFETCH" ] && echo $- | grep -q i 2>/dev/null && /usr/bin/neofetch;
