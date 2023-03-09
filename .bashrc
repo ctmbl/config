@@ -26,7 +26,19 @@ alias ll='ls -AlFh'
 alias l='ls -1F'
 
 # useful aliases
-alias dua='du -h --summarize * | sort --human-numeric-sort' # TO UPDATE to add slash after directories' name
+dua ()
+{
+    if [[ -z "$1" ]]; then
+        du -h --summarize *
+    else
+        du -h --summarize "$1"/*
+    fi | sort --human-numeric-sort | while IFS=$'\t' read -r size line;
+    do
+        printf "%s\t%s" $size "$line";
+        [[ -d $line ]] && printf "/";
+        echo;
+    done;
+}
 
 # ex = EXtractor for all kinds of archives (from ArcoLinux default .bashrc)
 # usage: ex <file>
