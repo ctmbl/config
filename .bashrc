@@ -18,12 +18,16 @@ alias grep='grep --color=auto'
 alias ll='ls -AlFh'
 alias l='ls -1F'
 
+# Enable aliases completion
+source ~/.config/complete-alias.d/complete-alias
+
 # git aliases
 alias git-config='/usr/bin/git --git-dir=/home/ctmbl/config.git --work-tree=/home/ctmbl'
 alias gconf='git-config'
 # Correct typos
 alias gcnof='git-config'
 alias gocnf='git-config'
+complete -F _complete_alias gconf
 
 # useful aliases
 dua ()
