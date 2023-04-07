@@ -1,6 +1,7 @@
 [[ $- != *i* ]] && return
 
 [ -f "/usr/bin/vim" ] && export EDITOR="/usr/bin/vim"
+export SHELL="/usr/bin/bash"
 
 export HISTCONTROL=ignoredups:ignorespace;
 
