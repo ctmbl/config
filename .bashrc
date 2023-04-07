@@ -82,5 +82,6 @@ eval "$(ssh-agent -s)" > /dev/null
 # Only load liquidprompt in interactive shells, not from a script or from scp
 # `liquidprompt`
 [ -f "/usr/bin/liquidprompt" ] && echo $- | grep -q i 2>/dev/null && . /usr/bin/liquidprompt;
+[ -f "/usr/share/liquidprompt/liquidprompt" ] && echo $- | grep -q i 2>/dev/null && . /usr/share/liquidprompt/liquidprompt
 # `autojump`
 [ -f "/usr/bin/autojump" ] && [ -f "/usr/share/autojump/autojump.bash" ] && echo $- | grep -q i 2>/dev/null && . /usr/share/autojump/autojump.bash;
