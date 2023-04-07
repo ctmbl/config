@@ -19,6 +19,7 @@ alias grep='grep --color=auto'
 alias ll='ls -AlFh'
 alias l='ls -1F'
 
+source /usr/share/bash-completion/bash_completion
 # Enable aliases completion
 source ~/.config/complete-alias.d/complete-alias
 
