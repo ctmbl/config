@@ -2,4 +2,5 @@ gdb
 gef (https://github.com/hugsy/gef)
 pwntools 
 ghidra
-
+pycryptodome
+gmpy2
