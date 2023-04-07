@@ -23,7 +23,7 @@ alias l='ls -1F'
 source ~/.config/complete-alias.d/complete-alias
 
 # git aliases
-alias git-config='/usr/bin/git --git-dir=/home/ctmbl/config.git --work-tree=/home/ctmbl'
+alias git-config='/usr/bin/git --git-dir=$HOME/config.git --work-tree=$HOME'
 alias gconf='git-config'
 # Correct typos
 alias gcnof='git-config'
