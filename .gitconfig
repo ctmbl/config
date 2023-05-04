@@ -18,6 +18,11 @@
 	rtv = remote -v
 	addu = add -u
 	addup = add -u -p
+	btr = log --oneline --graph --decorate
+	rva = revert --abort
+	rvc = revert --continue
+	mrc = merge --continue
+	mra = merge --abort
 [user]
 	name = ctmbl
 	email = mabileau.clement@gmail.com
