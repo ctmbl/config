@@ -4,3 +4,5 @@ pwntools
 ghidra
 pycryptodome
 gmpy2
+patchelf
+checksec
