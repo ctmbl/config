@@ -1,0 +1,65 @@
+# State of my comprehension of linux permissions
+
+??? indicates a doubt
+
+Sources:
+https://linuxconfig.org/how-to-use-special-permissions-the-setuid-setgid-and-sticky-bits
+https://unix.stackexchange.com/questions/23063/sticky-bit-vs-setgid-for-facilitating-shared-write-access
+https://www.cbtnuggets.com/blog/technology/system-admin/linux-file-permissions-understanding-setuid-setgid-and-the-sticky-bit
+
+`ls -l /` output:
+```
+lrwxrwxrwx   1 root root     7 19 janv. 19:16 bin -> usr/bin
+drwxr-xr-x   5 root root  4096 25 avril 23:26 boot
+...
+drwxrwxrwt  38 root root  1160  1 mai   21:32 tmp
+drwxr-xr-x   9 root root  4096 27 avril 23:40 usr
+drwxr-xr-x  12 root root  4096 28 avril 01:10 var
+```
+
+1st column : type + permissions
+2nd  : number of objetcs inside ???
+3rd  : owner
+4th  : group
+5th  : size
+7-9th: date and hour of last update
+10th : object name
+
+about permissions:
+1st bit (type):
+ . => file
+ l => symlink
+ d => directory
+ s => stream ???
+ c => ???
+2-4th  : owner's permissions
+5-6th  : group's permissions
+7-10th : other's permissions
+
+a permission trio is always ordered as rwx
+what means these characters for files and directories?
+r: read
+ file      : can be read
+ directory : can list (but permissions can't be listed without x)
+w: write
+ file      : can be modified, can be removed ???
+ directory : 1st layer content can be created and removed
+x: execute
+ file      : can be executed (NOTE: for interpreted language such as python or bash, only the r bit is needed to execute the script, the interpreter must have the x bit though)
+ directory : can move into (cd), can be "crossed", meaning if this bit is absent any command trying to access to subfiles or subdir of this dir (even ls ../.. !) will fail even if a subdir is readable
+             |--> not set this bit SEEMS to protect anything (at any layer) that is in this directory
+
+but there are also 2 other types of bits:
+t: sticky bit, takes the other's x bit place (10th)
+ file      : no effect
+ directory : the first layer content can no longer be removed by someone who has write access to it, only the owner of an object can remove it
+
+s: setuid/setgid bit, takes the owner/group's x bit place (4th or 6th)
+ owner (setuid bit):
+  file      : when executed, executed with the owner's UID (so with the owner's rights) instead of the user's UID (but keeps user's GID)
+  directory : no effect
+ group (setgid bit):
+  file      : when executed, executed with the group's GID (so with the group's rights) instead of the user's GID (but keeps user's UID)
+  directory : every object created in the 1st layer of this directory will not have the user's group but the directory's group set
+              every directory created in the 1st layer will have the setgid bit set to inherit this behavior automatically
+
