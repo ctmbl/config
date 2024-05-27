@@ -5,9 +5,10 @@ export SHELL="/usr/bin/bash"
 
 export HISTCONTROL=ignoredups:ignorespace;
 
+# https://stackoverflow.com/a/19454838
 export HISTFILE="${HOME}/.bash_history"
-export HISTFILESIZE=200000
-export HISTSIZE=100000
+export HISTFILESIZE=1000000
+export     HISTSIZE=1000000
 
 shopt -s histappend;
 
