@@ -1,0 +1,17 @@
+inxi
+lshw (-c en particulier)
+lspci
+lsusb
+neofetch
+
+audio:
+inxi -A
+aplay -lL
+arecord -l
+pactl list cards
+pactl list sinks
+pactl list sources
+
+network:
+ip
+ifconfig
